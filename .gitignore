@@ -2,7 +2,11 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+#sim crap
+networktables.json
+simgui-ds.json
+simgui-window.json
+simgui.json
 # C extensions
 *.so
 
