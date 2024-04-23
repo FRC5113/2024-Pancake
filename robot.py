@@ -17,10 +17,8 @@ class MyRobot(magicbot.MagicRobot):
     def createObjects(self):
         # Motor controllers for the drivetrain
         """only 2 motors cause pancake has 2 at the time of writing"""
-        #self.frontleftmotor = phoenix5.WPI_TalonSRX(15)
-        self.frontrightmotor = phoenix5.WPI_TalonSRX(17)
-        self.backleftmotor = phoenix5.WPI_TalonSRX(22)
-        #self.backrightmotor = phoenix5.WPI_TalonSRX(12)
+        self.rightmotor = phoenix5.WPI_TalonSRX(17)
+        self.leftmotor = phoenix5.WPI_TalonSRX(22)
 
         # Joystick for user input
         self.joy = wpilib.XboxController(0)
@@ -43,6 +41,6 @@ class MyRobot(magicbot.MagicRobot):
         )
 
         # Update SmartDashboard with joystick values and current gyroscope angle
-        SmartDashboard.putNumber("Joystick X value", self.joy.getY())
-        SmartDashboard.putNumber("Joystick Y value", self.joy.getX())
+        SmartDashboard.putNumber("Joystick X value", self.joy.getLeftY())
+        SmartDashboard.putNumber("Joystick Y value", self.joy.getLeftX())
         SmartDashboard.putNumber("navx", self.navx.getAngle())
