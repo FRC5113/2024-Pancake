@@ -35,11 +35,9 @@ class MyRobot(magicbot.MagicRobot):
     def teleopPeriodic(self):
 
         # Drive the robot using arcade drive with adjusted speed
-        with self.consumeExceptions():
-            self.drivetrain.arcade_drive(
-                self.joy.getLeftY(),
-                -self.joy.getLeftX(),
-            )
+        self.drivetrain.tankDrive(
+            self.joy.getLeftY(), -self.joy.getRightY() * 0.9
+        )
         # Update SmartDashboard with joystick values and current gyroscope angle
         SmartDashboard.putNumber("Joystick X value", self.joy.getLeftY())
         SmartDashboard.putNumber("Joystick Y value", self.joy.getLeftX())

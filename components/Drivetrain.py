@@ -23,7 +23,7 @@ class Drivetrain:
         )
 
     # Method to set forward and turn values for arcade drive
-    def arcade_drive(self, forward: float, turn: float):
+    def tankDrive(self, forward: float, turn: float):
         if not (-1.0 <= forward <= 1.0):
             raise Exception(f"Improper value for forward entered: {forward}")
         if not (-1.0 <= turn <= 1.0):
@@ -33,4 +33,4 @@ class Drivetrain:
 
     # Method to execute arcade drive during each control loop iteration
     def execute(self):
-        self.robotDrive.arcadeDrive(self.forward, self.turn)
+        self.robotDrive.tankDrive(self.forward, self.turn)
