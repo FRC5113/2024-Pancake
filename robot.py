@@ -36,7 +36,7 @@ class MyRobot(magicbot.MagicRobot):
 
         # Drive the robot using arcade drive with adjusted speed
         self.drivetrain.tankDrive(
-            self.joy.getLeftY(), -self.joy.getRightY() * 0.9
+            self.joy.getLeftY(), -self.joy.getRightY()
         )
         # Update SmartDashboard with joystick values and current gyroscope angle
         SmartDashboard.putNumber("Joystick X value", self.joy.getLeftY())
